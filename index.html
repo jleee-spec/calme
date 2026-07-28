@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calme</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- overlay -->
+  <div class="overlay hidden"></div>
+  <!-- menu drawer -->
+<aside class="menu-drawer">
+  <div class="menu-header">
+    <span>MENU</span>
+    <button class="menu-close">
+      ×
+    </button>
+  </div>
+  <nav class="menu-nav">
+    <a href="index.html">
+      HOME
+    </a>
+    <a href="#" data-menu="skincare">
+      SKINCARE
+    </a>
+    <a href="#" data-menu="makeup">
+      MAKEUP
+    </a>
+    <a href="#" data-menu="haircare">
+      HAIR CARE
+    </a>
+    <a href="#" data-menu="fragrance">
+      FRAGRANCE
+    </a>
+    <a href="#" data-menu="cart">
+      CART
+    </a>
+  </nav>
+</aside>
+  <!-- cart drawer -->
+    <aside class="cart-drawer hidden">
+      <div class="cart-header">
+        <h2>ショッピングカート</h2>
+        <div class="cart-actions">
+          <button class="clear-cart">
+            空にする
+          </button>
+          <button class="close-button">
+            ×
+          </button>
+        </div>
+      </div>
+      <div class="cart-empty">
+        <div class="cart-icon">
+          🛒
+        </div>
+        <h3>カートは空です</h3>
+        <p>お気に入りの商品を追加してください</p>
+      </div>
+      <div class="cart-items"></div>
+      <div class="cart-footer">
+        <div class="total-container">
+          <span>合計金額</span>
+          <span id="total-price">0</span>
+        </div>
+        <a href="checkout.html" class="checkout-button">
+          レジに進む
+        </a>
+      </div>
+    </aside>
+  <!-- main content -->
+  <div class="container">
+    <!-- header -->
+    <header class="header">
+      <button class="menu-button">
+        <img src="image/menu.webp" alt="Menu">
+      </button>
+      <div class="logo">
+      calme
+  </div>
+  <button class="cart-button">
+        <div class="perfume-wrapper">
+          <div class="perfume-liquid"></div>
+          <img src="image/perfume_cart_icon.webp" alt="perfume cart" class="perfume-cart">
+        </div>
+        <span class="cart-count">
+          0
+        </span>
+      </button>
+    </header>
+    <!-- hero -->
+    <section class="hero">
+      <h1 class="hero-title">美しさのためのコスメ</h1>
+      <p class="hero-text">厳選されたプレミアムビューティープロダクト</p>
+    </section>
+    <!-- category -->
+    <nav class="category-list">
+      <button class="category active" data-category="all">
+        すべて
+      </button>
+      <button class="category" data-category="skincare">
+        スキンケア
+      </button>
+      <button class="category" data-category="makeup">
+        メイクアップ
+      </button>
+      <button class="category" data-category="haircare">
+        ヘアケア
+      </button>
+      <button class="category" data-category="fragrance">
+        フレグランス
+      </button>
+    </nav>
+    <!-- product grid -->
+    <section class="product-grid">
+      <!-- card -->
+      <article class="product-card" data-category="skincare">
+        <img src="image/peeling_5.webp" alt="Peeling" class="product-image"/>
+        <div class="product-info">
+          <h3 class="product-name">Peeling</h3>
+          <div class="product-bottom">
+            <span class="price">
+              ¥4,800
+            </span>
+            <button class="add-button"
+              data-name="Peeling"
+              data-price="4800"
+              data-image="image/peeling_5.webp">
+              カートに追加
+            </button>
+          </div>
+        </div>
+      </article>
+      <article class="product-card" data-category="skincare">
+        <img src="image/peeling_4.webp" alt="Peeling" class="product-image"/>
+        <div class="product-info">
+          <h3 class="product-name">Peeling</h3>
+          <div class="product-bottom">
+            <span class="price">
+              ¥4,800
+            </span>
+            <button class="add-button"
+              data-name="Peeling"
+              data-price="4800"
+              data-image="image/peeling_4.webp">
+              カートに追加
+            </button>
+          </div>
+        </div>
+      </article>
+      <article class="product-card" data-category="skincare">
+        <img src="image/toner.webp" alt="Toner" class="product-image"/>
+        <div class="product-info">
+          <h3 class="product-name">Toner</h3>
+          <div class="product-bottom">
+            <span class="price">
+              ¥4,500
+            </span>
+            <button class="add-button"
+              data-name="Toner"
+              data-price="4500"
+              data-image="image/toner.webp">
+              カートに追加
+            </button>
+          </div>
+        </div>
+      </article>
+      <article class="product-card" data-category="skincare">
+        <img src="image/lotion.webp" alt="Lotion" class="product-image"/>
+        <div class="product-info">
+          <h3 class="product-name">Lotion</h3>
+          <div class="product-bottom">
+            <span class="price">
+              ¥5,300
+            </span>
+            <button class="add-button"
+              data-name="Lotion"
+              data-price="5300"
+              data-image="image/lotion.webp">
+              カートに追加
+            </button>
+          </div>
+        </div>
+      </article>
+      <article class="product-card" data-category="skincare">
+        <img src="image/serum.webp" alt="Serum" class="product-image"/>
+        <div class="product-info">
+          <h3 class="product-name">Serum</h3>
+          <div class="product-bottom">
+            <span class="price">
+              ¥5,500
+            </span>
+            <button class="add-button"
+              data-name="Serum"
+              data-price="5500"
+              data-image="image/serum.webp">
+              カートに追加
+            </button>
+          </div>
+        </div>
+      </article>
+      <!-- card -->
+      <article class="product-card" data-category="makeup">
+        <img src="image/lipstick.webp" alt="Lipstick" class="product-image"/>
+        <div class="product-info">
+          <h3 class="product-name">Lipstick</h3>
+          <div class="product-bottom">
+            <span class="price">
+              ¥3,200
+            </span>
+            <button class="add-button" 
+              data-name="Lipstick" 
+              data-price="3200"
+              data-image="image/lipstick.webp">
+              カートに追加
+            </button>
+          </div>
+        </div>
+      </article>
+      <article class="product-card" data-category="makeup">
+        <img src="image/lipstick_2.webp" alt="Lipstick" class="product-image"/>
+        <div class="product-info">
+          <h3 class="product-name">Lipstick</h3>
+          <div class="product-bottom">
+            <span class="price">
+              ¥3,200
+            </span>
+            <button class="add-button" 
+              data-name="Lipstick" 
+              data-price="3200"
+              data-image="image/lipstick_2.webp">
+              カートに追加
+            </button>
+          </div>
+        </div>
+      </article>
+      <article class="product-card" data-category="makeup">
+        <img src="image/lipstick_3.webp" alt="Lipstick" class="product-image"/>
+        <div class="product-info">
+          <h3 class="product-name">Lipstick</h3>
+          <div class="product-bottom">
+            <span class="price">
+              ¥3,200
+            </span>
+            <button class="add-button" 
+              data-name="Lipstick" 
+              data-price="3200"
+              data-image="image/lipstick_3.webp">
+              カートに追加
+            </button>
+          </div>
+        </div>
+      </article>
+      <article class="product-card" data-category="makeup">
+        <img src="image/gloss.webp" alt="Gloss" class="product-image"/>
+        <div class="product-info">
+          <h3 class="product-name">Gloss</h3>
+          <div class="product-bottom">
+            <span class="price">
+              ¥3,100
+            </span>
+            <button class="add-button" 
+              data-name="Gloss" 
+              data-price="3100"
+              data-image="image/gloss.webp">
+              カートに追加
+            </button>
+          </div>
+        </div>
+      </article>
+      <article class="product-card" data-category="makeup">
+        <img src="image/gloss_2.webp" alt="Gloss" class="product-image"/>
+        <div class="product-info">
+          <h3 class="product-name">Gloss</h3>
+          <div class="product-bottom">
+            <span class="price">
+              ¥3,100
+            </span>
+            <button class="add-button" 
+              data-name="Gloss" 
+              data-price="3100"
+              data-image="image/gloss_2.webp">
+              カートに追加
+            </button>
+          </div>
+        </div>
+      </article>
+      <!-- card -->
+      <article class="product-card" data-category="haircare">
+        <img src="image/shampoo_2.webp" alt="Shampoo" class="product-image"/>
+        <div class="product-info">
+          <h3 class="product-name">Shampoo</h3>
+          <div class="product-bottom">
+            <span class="price">
+              ¥3,300
+            </span>
+            <button class="add-button" 
+              data-name="Shampoo" 
+              data-price="3300"
+              data-image="image/shampoo_2.webp">
+              カートに追加
+            </button>
+          </div>
+        </div>
+      </article>
+      <article class="product-card" data-category="haircare">
+        <img src="image/shampoo_3.webp" alt="Shampoo" class="product-image"/>
+        <div class="product-info">
+          <h3 class="product-name">Shampoo</h3>
+          <div class="product-bottom">
+            <span class="price">
+              ¥3,300
+            </span>
+            <button class="add-button" 
+              data-name="Shampoo" 
+              data-price="3300"
+              data-image="image/shampoo_3.webp">
+              カートに追加
+            </button>
+          </div>
+        </div>
+      </article>
+      <article class="product-card" data-category="haircare">
+        <img src="image/shampoo_4.webp" alt="Shampoo" class="product-image"/>
+        <div class="product-info">
+          <h3 class="product-name">Shampoo</h3>
+          <div class="product-bottom">
+            <span class="price">
+              ¥3,300
+            </span>
+            <button class="add-button" 
+              data-name="Shampoo" 
+              data-price="3300"
+              data-image="image/shampoo_4.webp">
+              カートに追加
+            </button>
+          </div>
+        </div>
+      </article>
+      <article class="product-card" data-category="haircare">
+        <img src="image/shampoo_5.webp" alt="Shampoo" class="product-image"/>
+        <div class="product-info">
+          <h3 class="product-name">Shampoo</h3>
+          <div class="product-bottom">
+            <span class="price">
+              ¥3,300
+            </span>
+            <button class="add-button" 
+              data-name="Shampoo" 
+              data-price="3300"
+              data-image="image/shampoo_5.webp">
+              カートに追加
+            </button>
+          </div>
+        </div>
+      </article>
+      <article class="product-card" data-category="haircare">
+        <img src="image/shampoo_6.webp" alt="Shampoo" class="product-image"/>
+        <div class="product-info">
+          <h3 class="product-name">Shampoo</h3>
+          <div class="product-bottom">
+            <span class="price">
+              ¥3,300
+            </span>
+            <button class="add-button" 
+              data-name="Shampoo" 
+              data-price="3300"
+              data-image="image/shampoo_6.webp">
+              カートに追加
+            </button>
+          </div>
+        </div>
+      </article>
+      <article class="product-card" data-category="haircare">
+        <img src="image/treatment.webp" alt="Treatment" class="product-image"/>
+        <div class="product-info">
+          <h3 class="product-name">Treatment</h3>
+          <div class="product-bottom">
+            <span class="price">
+              ¥3,700
+            </span>
+            <button class="add-button" 
+              data-name="Treatment" 
+              data-price="3700"
+              data-image="image/treatment.webp">
+              カートに追加
+            </button>
+          </div>
+        </div>
+      </article>
+      <article class="product-card" data-category="haircare">
+        <img src="image/treatment_1.webp" alt="Treatment" class="product-image"/>
+        <div class="product-info">
+          <h3 class="product-name">Treatment</h3>
+          <div class="product-bottom">
+            <span class="price">
+              ¥3,700
+            </span>
+            <button class="add-button" 
+              data-name="Treatment" 
+              data-price="3700"
+              data-image="image/treatment_1.webp">
+              カートに追加
+            </button>
+          </div>
+        </div>
+      </article>
+      <article class="product-card" data-category="haircare">
+        <img src="image/treatment_2.webp" alt="Treatment" class="product-image"/>
+        <div class="product-info">
+          <h3 class="product-name">Treatment</h3>
+          <div class="product-bottom">
+            <span class="price">
+              ¥3,700
+            </span>
+            <button class="add-button" 
+              data-name="Treatment" 
+              data-price="3700"
+              data-image="image/treatment_2.webp">
+              カートに追加
+            </button>
+          </div>
+        </div>
+      </article>
+      <article class="product-card" data-category="haircare">
+        <img src="image/hairmilk.webp" alt="Hair Milk" class="product-image"/>
+        <div class="product-info">
+          <h3 class="product-name">Hair Milk</h3>
+          <div class="product-bottom">
+            <span class="price">
+              ¥2,800
+            </span>
+            <button class="add-button" 
+              data-name="Hair Milk" 
+              data-price="2800"
+              data-image="image/hairmilk.webp">
+              カートに追加
+            </button>
+          </div>
+        </div>
+      </article>
+      <article class="product-card" data-category="haircare">
+        <img src="image/hairmilk_2.webp" alt="Hair Milk" class="product-image"/>
+        <div class="product-info">
+          <h3 class="product-name">Hair Milk</h3>
+          <div class="product-bottom">
+            <span class="price">
+              ¥2,800
+            </span>
+            <button class="add-button" 
+              data-name="Hair Milk" 
+              data-price="2800"
+              data-image="image/hairmilk_2.webp">
+              カートに追加
+            </button>
+          </div>
+        </div>
+      </article>
+      <article class="product-card" data-category="haircare">
+        <img src="image/hairmilk_3.webp" alt="Hair Milk" class="product-image"/>
+        <div class="product-info">
+          <h3 class="product-name">Hair Milk</h3>
+          <div class="product-bottom">
+            <span class="price">
+              ¥2,800
+            </span>
+            <button class="add-button" 
+              data-name="Hair Milk" 
+              data-price="2800"
+              data-image="image/hairmilk_3.webp">
+              カートに追加
+            </button>
+          </div>
+        </div>
+      </article>
+      <article class="product-card" data-category="haircare">
+        <img src="image/hairoil.webp" alt="Hair Oil" class="product-image"/>
+        <div class="product-info">
+          <h3 class="product-name">Hair&nbsp;Oil</h3>
+          <div class="product-bottom">
+            <span class="price">
+              ¥2,900
+            </span>
+            <button class="add-button" 
+              data-name="Hair Oil" 
+              data-price="2900"
+              data-image="image/hairoil.webp">
+              カートに追加
+            </button>
+          </div>
+        </div>
+      </article>
+      <article class="product-card" data-category="haircare">
+        <img src="image/hairoil_2.webp" alt="Hair Oil" class="product-image"/>
+        <div class="product-info">
+          <h3 class="product-name">Hair Oil</h3>
+          <div class="product-bottom">
+            <span class="price">
+              ¥2,900
+            </span>
+            <button class="add-button" 
+              data-name="Hair Oil" 
+              data-price="2900"
+              data-image="image/hairoil_2.webp">
+              カートに追加
+            </button>
+          </div>
+        </div>
+      </article>
+      <article class="product-card" data-category="haircare">
+        <img src="image/hairoil_3.webp" alt="Hair Oil" class="product-image"/>
+        <div class="product-info">
+          <h3 class="product-name">Hair Oil</h3>
+          <div class="product-bottom">
+            <span class="price">
+              ¥2,900
+            </span>
+            <button class="add-button" 
+              data-name="Hair Oil" 
+              data-price="2900"
+              data-image="image/hairoil_3.webp">
+              カートに追加
+            </button>
+          </div>
+        </div>
+      </article>
+      <article class="product-card" data-category="haircare">
+        <img src="image/hairoil_4.webp" alt="Hair Oil" class="product-image"/>
+        <div class="product-info">
+          <h3 class="product-name">Hair Oil</h3>
+          <div class="product-bottom">
+            <span class="price">
+              ¥2,900
+            </span>
+            <button class="add-button" 
+              data-name="Hair Oil" 
+              data-price="2900"
+              data-image="image/hairoil_4.webp">
+              カートに追加
+            </button>
+          </div>
+        </div>
+      </article>
+      <!-- card -->
+      <article class="product-card" data-category="fragrance">
+        <img src="image/perfume.webp" alt="Perfume" class="product-image"/>
+        <div class="product-info">
+          <h3 class="product-name">Perfume</h3>
+          <div class="product-bottom">
+            <span class="price">
+              ¥5,900
+            </span>
+            <button class="add-button" 
+              data-name="Perfume" 
+              data-price="5900"
+              data-image="image/perfume.webp">
+              カートに追加
+            </button>
+          </div>
+        </div>
+      </article>
+      <article class="product-card" data-category="fragrance">
+        <img src="image/perfume_1.webp" alt="Perfume" class="product-image"/>
+        <div class="product-info">
+          <h3 class="product-name">Perfume</h3>
+          <div class="product-bottom">
+            <span class="price">
+              ¥5,900
+            </span>
+            <button class="add-button" 
+              data-name="Perfume" 
+              data-price="5900"
+              data-image="image/perfume_1.webp">
+              カートに追加
+            </button>
+          </div>
+        </div>
+      </article>
+      <article class="product-card" data-category="fragrance">
+        <img src="image/perfume_2.webp" alt="Perfume" class="product-image"/>
+        <div class="product-info">
+          <h3 class="product-name">Perfume</h3>
+          <div class="product-bottom">
+            <span class="price">
+              ¥5,900
+            </span>
+            <button class="add-button" 
+              data-name="Perfume" 
+              data-price="5900"
+              data-image="image/perfume_2.webp">
+              カートに追加
+            </button>
+          </div>
+        </div>
+      </article>
+      <article class="product-card" data-category="fragrance">
+        <img src="image/perfume_3.webp" alt="Perfume" class="product-image"/>
+        <div class="product-info">
+          <h3 class="product-name">Perfume</h3>
+          <div class="product-bottom">
+            <span class="price">
+              ¥5,900
+            </span>
+            <button class="add-button" 
+              data-name="Perfume" 
+              data-price="5900"
+              data-image="image/perfume_3.webp">
+              カートに追加
+            </button>
+          </div>
+        </div>
+      </article>
+      <article class="product-card" data-category="fragrance">
+        <img src="image/perfume_4.webp" alt="Perfume" class="product-image"/>
+        <div class="product-info">
+          <h3 class="product-name">Perfumee</h3>
+          <div class="product-bottom">
+            <span class="price">
+              ¥5,900
+            </span>
+            <button class="add-button" 
+              data-name="Perfume" 
+              data-price="5900"
+              data-image="image/perfume_4.webp">
+              カートに追加
+            </button>
+          </div>
+        </div>
+      </article>
+      <article class="product-card" data-category="fragrance">
+        <img src="image/diffuser_1.webp" alt="Diffuser" class="product-image"/>
+        <div class="product-info">
+          <h3 class="product-name">Diffuser</h3>
+          <div class="product-bottom">
+            <span class="price">
+              ¥4,800
+            </span>
+            <button class="add-button" 
+              data-name="Diffuser" 
+              data-price="4800"
+              data-image="image/diffuser_1.webp">
+              カートに追加
+            </button>
+          </div>
+        </div>
+      </article>
+      <article class="product-card" data-category="fragrance">
+        <img src="image/diffuser_2.webp" alt="Diffuser" class="product-image"/>
+        <div class="product-info">
+          <h3 class="product-name">Diffuser</h3>
+          <div class="product-bottom">
+            <span class="price">
+              ¥4,800
+            </span>
+            <button class="add-button" 
+              data-name="Diffuser" 
+              data-price="4800"
+              data-image="image/diffuser_2.webp">
+              カートに追加
+            </button>
+          </div>
+        </div>
+      </article>
+      <article class="product-card" data-category="fragrance">
+        <img src="image/diffuser_3.webp" alt="Diffuser" class="product-image"/>
+        <div class="product-info">
+          <h3 class="product-name">Diffuser</h3>
+          <div class="product-bottom">
+            <span class="price">
+              ¥4,800
+            </span>
+            <button class="add-button" 
+              data-name="Diffuser" 
+              data-price="4800"
+              data-image="image/diffuser_3.webp">
+              カートに追加
+            </button>
+          </div>
+        </div>
+      </article>
+    </section>
+  </div>
+  <button id="topButton" class="top-button">
+    <img src="image/top_icon.webp" alt="TOP">
+  </button>
+  <script src="script.js"></script>
+</body>
+</html>

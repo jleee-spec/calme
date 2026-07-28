@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calme | Checkout</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <a href="index.html" class="menu-button home-button">
+      <img src="image/menu.webp" alt="Home">
+    </a>
+  </header>
+  <main class="checkout-container">
+    <!-- 左側 -->
+    <section class="checkout-main">
+      <!-- STEP -->
+      <div class="step-indicator">
+        <div class="step-circle active">
+          1
+        </div>
+        <div class="step-line"></div>
+        <div class="step-circle">
+          2
+        </div>
+        <div class="step-line"></div>
+        <div class="step-circle">
+          3
+        </div>
+        <div class="step-line"></div>
+        <div class="step-circle">
+          4
+        </div>
+      </div>
+      <!-- STEP1 -->
+      <div class="step1">
+        <h2>Shipping Information</h2>
+        <div class="checkout-input-row">
+          <input type="text" placeholder="First Name">
+          <input type="text" placeholder="Last Name">
+        </div>
+        <input type="email" placeholder="Email Address">
+        <input type="tel" placeholder="Phone Number">
+        <div class="checkout-input-row">
+          <input type="text" placeholder="Postal Code">
+          <input type="text" placeholder="Prefecture">
+        </div>
+        <input type="text" placeholder="City">
+        <input type="text" placeholder="Address">
+        <button class="next-btn next-step1">
+          Continue to Payment
+        </button>
+      </div>
+      <!-- STEP2 -->
+      <div class="step2 hidden">
+        <h2>Payment Method</h2>
+        <input type="text" placeholder="Card Number">
+        <input type="text" placeholder="Cardholder Name">
+        <div class="checkout-input-row">
+          <input type="text" placeholder="MM / YY">
+          <input type="text" placeholder="CVV">
+        </div>
+        <button class="next-btn next-step2">
+          Review Order
+        </button>
+      </div>
+      <!-- STEP3 -->
+      <div class="step3 hidden">
+        <h2>Order Review</h2>
+        <div class="review-box">
+          <div class="review-items"></div>
+          <div class="review-total">
+            <span>Total</span>
+            <span id="review-total"></span>
+          </div>
+        </div>
+        <button class="next-btn next-step3">
+          Place Order
+        </button>
+      </div>
+      <!-- STEP4 -->
+      <div class="step4 hidden">
+        <div class="complete-box">
+          <h2>Thank you</h2>
+          <p class="complete-message">
+            Your order has been successfully placed.
+          </p>
+          <a href="index.html" class="next-btn home-btn">
+            Home
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- 右側 -->
+    <div class="order-summary">
+      <h3>Order Summary</h3>
+      <div class="checkout-items"></div>
+      <div class="total-row">
+        <span>Total</span>
+        <span id="checkout-total"></span>
+      </div>
+    </div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
