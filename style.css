@@ -27,6 +27,9 @@ body {
   background-attachment: fixed;
 
   color: #33373a;
+  
+  overflow-x:hidden;
+
 }
 
 /* =========================
@@ -870,26 +873,29 @@ body {
    skincare responsive
 ========================= */
 
-@media (max-width: 768px) {
-  
-  .skincare-page {
-    padding: 120px 24px 60px;
-  }
+@media (max-width:768px){
 
-  .skincare-page h1 {
-    font-size: 36px;
-    margin-bottom: 80px;
+  .skincare-page,
+  .makeup-page,
+  .haircare-page,
+  .fragrance-page{
+      padding:100px 20px 40px;
   }
 
   .product-section,
-  .product-section.reverse {
-    flex-direction: column;
-    gap: 40px;
-    margin-bottom: 100px;
+  .product-section.reverse{
+      flex-direction:column;
+      gap:30px;
+      margin-bottom:60px;
+      padding-bottom:60px;
   }
 
-  .product-text h2 {
-    font-size: 32px;
+  .product-text{
+      width:100%;
+  }
+
+  .product-image{
+      width:100%;
   }
 
 }
@@ -990,6 +996,20 @@ body {
   letter-spacing: .25em;
   margin-bottom: 20px;
 }
+
+@media (max-width:768px){
+
+  .skincare-hero .hero-title,
+  .makeup-hero .hero-title,
+  .haircare-hero .hero-title,
+  .fragrance-hero .hero-title{
+  
+      font-size:40px;
+      letter-spacing:.08em;
+  
+  }
+  
+  }
 
 .haircare-hero .hero-subtitle {
   font-size: 16px;
