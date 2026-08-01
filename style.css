@@ -540,6 +540,10 @@ body {
   border-radius: 999px;
   font-size: 16px;
   font-weight: 700;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-decoration:none;
   cursor: pointer;
   transition: background 0.3s;
 }
@@ -637,7 +641,7 @@ body {
   right: 2px;
 
   width: 70px;
-  height: 10%;
+  height: 70px;
 
   background: transparent;
   border: none;
@@ -717,10 +721,34 @@ body {
    skincare page
 ========================= */
 
-.skincare-page {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 10px 40px;
+.skincare-page,
+.makeup-page,
+.haircare-page,
+.fragrance-page{
+  max-width:1400px;
+  margin:0 auto;
+  padding:10px 40px;
+}
+
+.skincare-page .product-section:first-of-type,
+.makeup-page .product-section:first-of-type,
+.haircare-page .product-section:first-of-type,
+.fragrance-page .product-section:first-of-type{
+  margin-top:120px;
+}
+
+.skincare-hero,
+.makeup-hero,
+.haircare-hero,
+.fragrance-hero{
+  height:90vh;
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
 }
 
 .skincare-page h1 {
@@ -732,33 +760,17 @@ body {
   margin-bottom: 120px;
 }
 
-.skincare-page .product-section:first-of-type {
-  margin-top: 120px;
-}
-
 /* =========================
    skincare hero
 ========================= */
 
-.skincare-hero {
-  height: 90vh;
-
+.skincare-hero{
   background-image:
     linear-gradient(
       rgba(0,0,0,.15),
       rgba(0,0,0,.15)
     ),
     url("image/skincare.webp");
-
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  text-align: center;
 }
 
 .hero-overlay {
@@ -766,19 +778,23 @@ body {
 }
 
 .skincare-hero .hero-title,
-.makeup-hero .hero-title {
-  font-size: 80px;
-  font-weight: 200;
-  letter-spacing: .25em;
-  margin-bottom: 20px;
+.makeup-hero .hero-title,
+.haircare-hero .hero-title,
+.fragrance-hero .hero-title{
+  font-size:80px;
+  font-weight:200;
+  letter-spacing:.25em;
+  margin-bottom:20px;
 }
 
 .skincare-hero .hero-subtitle,
-.makeup-hero .hero-subtitle {
-  font-size: 16px;
-  letter-spacing: .2em;
-  opacity: .9;
-  color: white;
+.makeup-hero .hero-subtitle,
+.haircare-hero .hero-subtitle,
+.fragrance-hero .hero-subtitle{
+  font-size:16px;
+  letter-spacing:.2em;
+  opacity:.9;
+  color:white;
 }
 
 /* =========================
@@ -901,100 +917,29 @@ body {
 }
 
 /* =========================
-   makeup page
-========================= */
-
-.makeup-page {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 10px 40px;
-}
-
-.makeup-page .product-section:first-of-type {
-  margin-top: 120px;
-}
-
-/* =========================
    makeup hero
 ========================= */
 
-.makeup-hero {
-  height: 90vh;
-
+.makeup-hero{
   background-image:
     linear-gradient(
       rgba(0,0,0,.15),
       rgba(0,0,0,.15)
     ),
     url("image/makeup.webp");
-
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  text-align: center;
-}
-
-/* =========================
-   makeup responsive
-========================= */
-
-@media (max-width: 768px) {
-
-  .makeup-page {
-    padding: 120px 24px 60px;
-  }
-
-}
-
-/* =========================
-   haircare page
-========================= */
-
-.haircare-page {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 10px 40px;
-}
-
-.haircare-page .product-section:first-of-type {
-  margin-top: 120px;
 }
 
 /* =========================
    haircare hero
 ========================= */
 
-.haircare-hero {
-  height: 90vh;
-
+.haircare-hero{
   background-image:
     linear-gradient(
       rgba(0,0,0,.15),
       rgba(0,0,0,.15)
     ),
     url("image/haircare.webp");
-
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  text-align: center;
-}
-
-.haircare-hero .hero-title {
-  font-size: 80px;
-  font-weight: 200;
-  letter-spacing: .25em;
-  margin-bottom: 20px;
 }
 
 @media (max-width:768px){
@@ -1011,24 +956,9 @@ body {
   
   }
 
-.haircare-hero .hero-subtitle {
-  font-size: 16px;
-  letter-spacing: .2em;
-  opacity: .9;
-  color: white;
-}
-
 /* =========================
    haircare responsive
 ========================= */
-
-@media (max-width: 768px) {
-
-  .haircare-page {
-    padding: 120px 24px 60px;
-  }
-
-}
 
 .cart-item,
 .menu-drawer {
@@ -1037,73 +967,17 @@ body {
 }
 
 /* =========================
-   fragrance page
-========================= */
-
-.fragrance-page {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 10px 40px;
-}
-
-.fragrance-page .product-section:first-of-type {
-  margin-top: 120px;
-}
-
-/* =========================
    fragrance hero
 ========================= */
 
-.fragrance-hero {
-  height: 90vh;
-
+.fragrance-hero{
   background-image:
     linear-gradient(
       rgba(0,0,0,.15),
       rgba(0,0,0,.15)
     ),
     url("image/fragrance.webp");
-
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  text-align: center;
 }
-
-.fragrance-hero .hero-title {
-  font-size: 80px;
-  font-weight: 200;
-  letter-spacing: .25em;
-  margin-bottom: 20px;
-}
-
-.fragrance-hero .hero-subtitle {
-  font-size: 16px;
-  letter-spacing: .2em;
-  opacity: .9;
-  color: white;
-}
-
-/* =========================
-   fragrance responsive
-========================= */
-
-@media (max-width: 768px) {
-
-  .fragrance-page {
-    padding: 120px 24px 60px;
-  }
-
-}
-
-/* =========================
-   checkout page
-========================= */
 
 /* =========================
    checkout multi step
@@ -1338,22 +1212,6 @@ body {
   align-items: center;
   gap: 15px;
   margin-bottom: 20px;
-}
-
-.checkout-button{
-  width:100%;
-  padding:16px;
-  background:#1399a8;
-  color:white;
-  border-radius:999px;
-  font-size:16px;
-  font-weight:700;
-
-  display:flex;
-  justify-content:center;
-  align-items:center;
-
-  text-decoration:none;
 }
 
 .checkout-item-image{
